@@ -10,15 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <limits.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <limits.h>
-void ft_putchar(int c);
-void ft_putstr(const char *s);
-void ft_putnbr(int nbr);
-void puthixa(unsigned int nbr, int base);
-void upper(unsigned int nbr);
 
-# endif
+int	ft_putchar(int c);
+int	ft_putstr(const char *s);
+int	ft_putnbr(int nbr);
+int	ft_puthixa(unsigned int nbr, int base);
+int	ft_putunsdic(unsigned int nbr);
+int	ft_pointer(unsigned long nbr);
+int	ft_printf(const char *format, ...);
+
+#endif

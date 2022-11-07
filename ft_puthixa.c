@@ -9,19 +9,36 @@
 /*   Updated: 2022/11/05 03:06:13 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libprintf.h"
+#include "ft_printf.h"
 
-void puthixa(unsigned int nbr, int base)
+static int	count(unsigned long nb)
 {
-    if (nbr > 16)
+	int	i;
+
+	i = 0;
+	if(nb == 0)
+		return(1);
+	while (nb > 0)
 	{
-        puthixa(nbr / 16, base);
-        puthixa(nbr % 16, base);
+		i++;
+		nb /= 16;
+	}
+	return (i);
+}
+
+int	ft_puthixa(unsigned int nbr, int base)
+{
+	if (nbr >= 16)
+	{
+		ft_puthixa(nbr / 16, base);
+		ft_puthixa(nbr % 16, base);
 	}
 	else if (nbr > 9)
 	{
 		if (base == 'x')
+		{
 			ft_putchar(nbr + 87);
+		}
 		else
 			ft_putchar(nbr + 55);
 	}
@@ -29,10 +46,13 @@ void puthixa(unsigned int nbr, int base)
 	{
 		ft_putchar(nbr + 48);
 	}
+	return (count(nbr));
 }
 
-int main()
-{
-	char s[] = "147";
-	puthixa(s, 'x');
-}
+// int main()
+// {
+// 	int x = ft_puthixa(0, 'x');
+// 	printf("\n");
+	
+// 	printf("\n%d",x);
+// }

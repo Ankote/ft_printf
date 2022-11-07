@@ -9,9 +9,24 @@
 /*   Updated: 2022/11/05 06:14:02 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libprintf.h"
+#include "ft_printf.h"
 
-void ft_unsigned_dic(unsigned int nbr)
+static int	count(unsigned int nb)
+{
+	int	i;
+
+	i = 0;
+	if (nb == 0)
+		return (1);
+	while (nb > 0)
+	{
+		i++;
+		nb /= 10;
+	}
+	return (i);
+}
+
+int	ft_putunsdic(unsigned int nbr)
 {
 	if (nbr > 9)
 	{
@@ -22,4 +37,9 @@ void ft_unsigned_dic(unsigned int nbr)
 	{
 		ft_putchar(nbr + 48);
 	}
+	return (count(nbr));
 }
+// int main()
+// {
+// 	printf("\n%d.",ft_putunsdic(-1411555444));
+// }

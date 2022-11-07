@@ -1,20 +1,23 @@
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-ARC = ar -rc
-FILES = ft_pointer.c ft_putchar.c ft_putnbr.c ft_puhixa.c ft_putunsdic.c ft_putstr.c
+ARC = ar rc
+FILES = ft_pointer.c ft_putchar.c ft_putnbr.c ft_puthixa.c ft_putunsdic.c ft_putstr.c  \
+		ft_printf.c
+		
 
-OBJCS = $(FILES:.o=.c)
+OBJCS = $(FILES:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJCS)
-	$(ARC) $(NAME) $(OBGCS)
-%.o:%.c
-	$(CC) $(CFLAGS) $(NAME) -c $< -o $@
+	$(ARC) $(NAME) $(OBJCS)
+	
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBGCS)
+	rm -f $(OBJCS)
 
 fclean : clean
 	rm -f $(NAME)

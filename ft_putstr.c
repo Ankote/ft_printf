@@ -9,18 +9,38 @@
 /*   Updated: 2022/11/05 02:07:31 by aankote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libprintf.h"
-
-void ft_putstr(const char *s)
+#include "ft_printf.h"
+int	ft_putstrnull(const char *s)
 {
-    int i;
+	int	i;
+	int	cpt;
+	char *p;
 
-    if (s)
-    {  
-        i = 0;
-        while (s[i])
-        {
-            ft_putchar(s[i++]);
-        }
-    }
+	cpt = 0;
+	i = 0;
+	if (!s)
+	{
+		p = "(null)";
+		while (p[i])
+		{
+			cpt += ft_putchar(p[i++]);
+		}
+	}
+	return (cpt);
+}
+
+int	ft_putstr(const char *s)
+{
+	int	i;
+	int	cpt;
+	cpt = 0;
+	i = 0;
+	
+	if (!s)
+		return (ft_putstrnull(s));
+	while (s[i])
+	{
+		cpt += ft_putchar(s[i++]);
+	}
+	return (cpt);
 }
