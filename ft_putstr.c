@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
+
 int	ft_putstrnull(const char *s)
 {
-	int	i;
-	int	cpt;
-	char *p;
+	int		i;
+	int		cpt;
+	char	*p;
 
 	cpt = 0;
 	i = 0;
@@ -33,9 +34,9 @@ int	ft_putstr(const char *s)
 {
 	int	i;
 	int	cpt;
+
 	cpt = 0;
 	i = 0;
-	
 	if (!s)
 		return (ft_putstrnull(s));
 	while (s[i])

@@ -36,7 +36,7 @@ int	ft_putnbr(int nbr)
 	if (nbr == INT_MIN)
 	{
 		ft_putstr("-2147483648");
-			return (11);
+		return (11);
 	}
 	else if (nbr < 0)
 	{
@@ -54,8 +54,3 @@ int	ft_putnbr(int nbr)
 	}
 	return (count(nbr));
 }
-
-// int main()
-// {
-// 	printf("%d\n",ft_putnbr(0));
-// }

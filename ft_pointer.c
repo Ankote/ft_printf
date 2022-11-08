@@ -11,14 +11,13 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-
 static int	count(unsigned long nb)
 {
 	int	i;
 
 	i = 0;
-	if(nb ==0)
-		return(1);
+	if (nb == 0)
+		return (1);
 	while (nb > 0)
 	{
 		i++;
@@ -36,7 +35,7 @@ static int	hixa(unsigned long nbr)
 	}
 	else if (nbr > 9)
 	{
-			ft_putchar(nbr + 87);
+		ft_putchar(nbr + 87);
 	}
 	else
 		ft_putchar(nbr + 48);

@@ -16,8 +16,8 @@ static int	count(unsigned long nb)
 	int	i;
 
 	i = 0;
-	if(nb == 0)
-		return(1);
+	if (nb == 0)
+		return (1);
 	while (nb > 0)
 	{
 		i++;
@@ -48,11 +48,3 @@ int	ft_puthixa(unsigned int nbr, int base)
 	}
 	return (count(nbr));
 }
-
-// int main()
-// {
-// 	int x = ft_puthixa(0, 'x');
-// 	printf("\n");
-	
-// 	printf("\n%d",x);
-// }
